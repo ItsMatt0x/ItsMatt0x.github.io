@@ -6,53 +6,147 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </head>
 <body>
-<!--Navbar-->
-<nav class="navbar navbar-expand-lg navbar-light bg-white">
+  <video autoplay muted loop id="myVideo">
+    <source src="INsane Warwick.mp4" type="video/mp4">
+  </video>
+  
+  <div class="content">
+    <h1>ItsMatt0x</h1>
+    <p>A random guy who plays league and for some reason made a youtube channel. The video playing is a compilation from my channel ;)</p>
+    <button id="myBtn" onclick="myFunction()">Pause</button>
+  <style>
+#myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
 
-    <div class="container">
-  
-      <a class="navbar-brand" href="#">
-       <img src="PichuIcon.png" height="100" alt="mdb logo">
-      </a>
-  
-      <!-- Collapse button -->
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
-        aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-  
-      <!-- Collapsible content -->
-      <div class="collapse navbar-collapse" id="basicExampleNav">
-  
-        <!-- Links -->
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="#">Home
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link 1</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link 2</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link 3</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link 4</a>
-          </li>
-  
-        </ul>
-        <!-- Links -->
-  
+.content {
+  position: fixed;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  color: #f1f1f1;
+  width: 100%;
+  padding: 20px;
+}
+
+#myBtn {
+  width: 200px;
+  font-size: 18px;
+  padding: 10px;
+  border: none;
+  background: #000;
+  color: #fff;
+  cursor: pointer;
+}
+
+#myBtn:hover {
+  background: #ddd;
+  color: black;
+}
+  </style>
+  <script>
+    // Get the video
+    var video = document.getElementById("myVideo");
+    
+    // Get the button
+    var btn = document.getElementById("myBtn");
+    
+    // Pause and play the video, and change the button text
+    function myFunction() {
+      if (video.paused) {
+        video.play();
+        btn.innerHTML = "Pause";
+      } else {
+        video.pause();
+        btn.innerHTML = "Play";
+      }
+    }
+    </script>
+  </div>
+<!-- Navbar-->
+<header class="header">
+  <nav class="navbar navbar-expand-lg fixed-top py-3">
+      <div class="container"><a href="https://www.twitch.tv/itsmatt0x" class="navbar-brand text-uppercase font-weight-bold">ItsMatt0x</a>
+          <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler navbar-toggler-right"><i class="fa fa-bars"></i></button>
+          
+          <div id="navbarSupportedContent" class="collapse navbar-collapse">
+              <ul class="navbar-nav ml-auto">
+                  <li class="nav-item active"><a href="#" class="nav-link text-uppercase font-weight-bold">Home <span class="sr-only">(current)</span></a></li>
+                  <li class="nav-item"><a href="#" class="nav-link text-uppercase font-weight-bold">About</a></li>
+                  <li class="nav-item"><a href="#" class="nav-link text-uppercase font-weight-bold">Gallery</a></li>
+                  <li class="nav-item"><a href="#" class="nav-link text-uppercase font-weight-bold">Portfolio</a></li>
+                  <li class="nav-item"><a href="#" class="nav-link text-uppercase font-weight-bold">Contact</a></li>
+              </ul>
+          </div>
       </div>
-      <!-- Collapsible content -->
-  
-    </div>
-  
+      <style>
+        .navbar {
+    transition: all 0.4s;
+}
+
+.navbar .nav-link {
+    color: #fff;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link:focus {
+    color: #fff;
+    text-decoration: none;
+}
+
+.navbar .navbar-brand {
+    color: #fff;
+}
+
+
+/* Change navbar styling on scroll */
+.navbar.active {
+    background: #fff;
+    box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar.active .nav-link {
+    color: #555;
+}
+
+.navbar.active .nav-link:hover,
+.navbar.active .nav-link:focus {
+    color: #555;
+    text-decoration: none;
+}
+
+.navbar.active .navbar-brand {
+    color: #555;
+}
+
+
+/* Change navbar styling on small viewports */
+@media (max-width: 991.98px) {
+    .navbar {
+        background: #fff;
+    }
+
+    .navbar .navbar-brand, .navbar .nav-link {
+        color: #555;
+    }
+}
+</style>
+<script>
+$(function () {
+    $(window).on('scroll', function () {
+        if ( $(window).scrollTop() > 10 ) {
+            $('.navbar').addClass('active');
+        } else {
+            $('.navbar').removeClass('active');
+        }
+    });
+});
+</script>
   </nav>
-  <!--/.Navbar-->
+</header>
     
   <script src="js/scripts.js"></script>
 </body>
