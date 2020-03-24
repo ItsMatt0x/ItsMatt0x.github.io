@@ -25,7 +25,7 @@
 
         .navbar {
     transition: all 0.4s;
-    background-color: rgba(0,0,0,.5);
+    background-color: rgba(0,0,0);
 
 }
 
@@ -61,7 +61,7 @@
 }
 
 .navbar.active .navbar-brand {
-    color: #555;
+    color: rgb(0, 0, 0);
 }
 
 
@@ -76,17 +76,7 @@
     }
 }
 </style>
-<script>
-$(function () {
-    $(window).on('scroll', function () {
-        if ( $(window).scrollTop() > 10 ) {
-            $('.navbar').addClass('active');
-        } else {
-            $('.navbar').removeClass('active');
-        }
-    });
-});
-</script>
+
   </nav>
 </header>
     
